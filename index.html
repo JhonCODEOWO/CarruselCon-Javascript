@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel de imágenes - By JhonCode</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Carrusel de imágenes con Javascript y CSS</h1>
+    <section class="introduccion">
+        <h2>¿Que es un carrusel de imágenes?
+        </h2>
+        <p class="contenido">
+            Un carrusel de imágenes es un apoyo gráfico visual para las páginas web que permiten visualizar distintas imágenes en un solo contenedor, lo cual da un impacto visual importante para los visitantes ya que podemos colocar imágenes que impacten a los lectores y les generen interés.
+        </p>
+        <p class="contenido">
+            Sabiendo esto es hora de comenzar :D
+        </p>
+    </section>
+
+    <main class="tutorial contenido">
+        <h2>Conocimientos necesarios para realizar esta práctica</h2>
+        <ol>
+            <li>Javascript, debes saber seleccionar elementos del DOM y como funcionan los listeners de eventos además de las funciones</li>
+            <li>CSS en nivel avanzado con capacidad de comprender como realizar posicionamientos principalmente</li>
+            <li>HTML en toda su mayoyoría para poder comprender el porque de la estructura, siendo esto el punto más importante</li>
+        </ol>
+        <h2>Ahora si, comencemos...</h2>
+        <p>
+            Para comenzar genera un directorio básico de una página web, ya sabes, un archivo llamado index.html como archivo principal, y las carpetas para tus imágenes, archivos css y de Javascript, esto depende mucho de cada persona sin embargo a continuación te dejo una captura de como quedó el mió.
+        </p>
+        <img src="img/screenshots/Screenshot_11.png" alt="captura_del_directorio">
+        <p>
+            Ahora lo siguiente que debes hacer es generar en el archivo de index.html colocar la siguiente estructura
+        </p>
+        <img src="img/screenshots/Screenshot_12.png" alt="estructura_html">
+        <p>
+            El primer div solamente nos servira para englobar todos los elementos necesarios, no se le dará estilo, aunque si lo desearas podrás darle medidas y ubicaciones específicas, normalmente este tipo de elementos gráficos suelen ocupar todo el ancho de pamtalla.
+        </p>
+        <p>
+            El segundo div solo nos servirá para colocarle la imagen de fondo que deseemos, y servirá como el área de trabajo para la posición de los botones, los cuales estarán encima de ese elemento usando relative y absolute.
+        </p>
+        <p>
+            Finalmente se colocan dos botones con una clase para su diseño la cual es general para ambos.
+        </p>
+        <h2>
+            Dando estilo a con css
+        </h2>
+        <p>
+            Al ser solo para una muestra el código css no es tanto de diseño, es más de posicionamiento asi que comencemos con la explicación
+        </p>
+        <h3>
+            CSS para el div imagen-carrusel
+        </h3>
+        <p>
+            Aquí únicamente se le da diseño general que se le da a una imágen de fondo, le quitamos la repetición con background-repeat: no repeat; despues ajustamos el tamaño de la imagen con background-size: cover; y finalmente la centramos con background position: center; la altura colocada depende de cada quien, normalmente no deberá ser tan grande puesto que si las imágenes no son grandes quedará un espacio vació. 
+        </p>
+        <img src="img/screenshots/Screenshot_13.png" alt="">
+        <p>
+            IMPORTANTE: Se coloca position: relative; para que a los elementos que se les ponga position: absolute; tomen solo las medidas del elemento con relative como su area de trabajo, por lo que debes colocarlo siempre que quieras posicionar elementos
+        </p>
+        <h3>CSS para el posicionamiento de los botones encima del div que mostrá las imágenes</h3>
+        <p>
+            Ahora debemos darle un diseño a los botones y además lograr posicionarlos encima de el div que tendra de fondo las imágenes, para ello primero damos diseño a los botones, y, usando su clase aplicamos el siguiente código css, este código no necesita explicación, el diseño depende de cada quien así que sientete libre de darles el diseño que gustes
+        </p>
+        <img src="img/screenshots/Screenshot_14.png" alt="">
+        <h3>Posicionando los botones encima del div que mostrará las imágenes</h3>
+        <p>
+            Si recuerdas se hizo un div para los botones, a este div le debemos de dar el position: absolute; y al colocarlo notarás como ese div estará encima de la imagen, aunque los elementos no estan ni centrados, y no tienen espaciado, para poder hacerlo se debe de dar como propiedad un height del 100%, esto hará que el div de esos botones tome toda la altura de el div que tiene la position relative, en este caso el div de las imágenes, ahora para centrar los elementos de manera vertical debemos usar primero un display: flex; para poder acceder a el centrado vertical, con align-items: center; lograremos eso, y finalmente para darles un espaciado usamos justify-content: space-between;, sin flex no podriamos acceder a estas propiedades asi que es importante que lo coloques, con esto lograras tener el diseño, solo falta darle funcionalidad con Javascript :)
+        </p>
+        <img src="img/screenshots/15.png" alt="">
+        <h2>Realizando código de Javascript</h2>
+        <p>
+            Para finalizar solo resta realizar la funcionalidad, esta se divide en distintas partes, primero seleccionamos los elementos que vamos a utilizar, luego inicializamos una variable que funcionara como el indice, posteriormente se instanciará un arreglo con la dirección de las imágenes,luego creamos la función que asignará por medio de DOM el elemento de un arreglo en base al indice recibido, y finalmente se crean las funciones en base al evento click de los botones, a continuación se muestra todo el código
+        </p>
+        <script src="https://gist.github.com/JhonCODEOWO/1c8f4db1ff05bb302534a312885c0ec6.js"></script>
+        <h2>¡Listo! a continuación he dejado el resultado que debe darte, puedes percatarte que el código puede optimizarse más, lo he dejado así para que practiques por tu cuenta asi que Adelante :)</h2>
+    </main>
+    <div id="carrusel">
+        <div id="imagen-carrusel">
+            <div class="buttons">
+                <button id="previous-image" class="btn-accion">Anterior</button>
+                <button id="next-image" class="btn-accion">Siguiente</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

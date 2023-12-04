@@ -79,14 +79,33 @@
         <script src="https://gist.github.com/JhonCODEOWO/1c8f4db1ff05bb302534a312885c0ec6.js"></script>
         <h2>¡Listo! a continuación he dejado el resultado que debe darte, puedes percatarte que el código puede optimizarse más, lo he dejado así para que practiques por tu cuenta asi que Adelante :)</h2>
     </main>
+
     <div id="carrusel">
-        <div id="imagen-carrusel">
+        <div id="imagen-carrusel" class="imagen-carrusel" style="overflow: hidden;">
             <div class="buttons">
                 <button id="previous-image" class="btn-accion">Anterior</button>
                 <button id="next-image" class="btn-accion">Siguiente</button>
             </div>
+            <div class="info-extra">
+                <h2 id="titulo-carrusel">PRUEBA DE TITULO</h2>
+                <a href="" id="hipervinculo-carrusel">PRUEBA DE VINCULO</a>
+            </div>
         </div>
     </div>
+
+    <h2>Carrusel usando img</h2>
+
+    <div id="carrusel" class="carrusel">
+        <!-- <div class="contenedor-imagen">
+            <img class="imagen" src="./img/sl_cualidadesMasc.jpg" alt="">
+        </div> -->
+        <img class="imagen" src="./img/sl_cualidadesMasc.jpg" alt="">
+        <div class="info-extra-img">
+            <h2 id="titulo-carrusel">PRUEBA DE TITULO</h2>
+            <a href="" id="hipervinculo-carrusel">PRUEBA DE VINCULO</a>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>

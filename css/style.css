@@ -21,13 +21,20 @@ p{
     margin: 0 auto;
 }
 
-#imagen-carrusel{
+.imagen-carrusel{
     background-image: url(../img/imagen1.png);
+    background-color: black;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     height: 300px;
     position: relative;
+}
+
+@media (min-width: 768px){
+    .imagen-carrusel{
+        background-size: cover;
+    }
 }
 
 .btn-accion{
@@ -47,4 +54,52 @@ p{
     justify-content: space-between;
     position: relative;
     height: 100%;
+}
+
+.info-extra{
+    position: relative;
+    bottom: 6rem;
+    padding-left: 2rem;
+}
+
+.info-extra h2, .info-extra a{
+    text-align: start;
+    color: white;
+}
+
+.info-extra a{
+    text-decoration: none;
+}
+
+/* CSS para carrusel con img */
+.carrusel{
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.carrusel .imagen{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (min-width: 768px){
+    .carrusel .imagen{
+        
+    }
+}
+
+.carrusel .info-extra-img{
+    position: absolute;
+    top: 20px;
+}
+
+.carrusel .imagen{
+    position: absolute;
+}
+
+.carrusel .info-extra-img h2, .carrusel .info-extra-img a{
+    color: white;
+    text-decoration: none;
+    margin: 0;
 }
